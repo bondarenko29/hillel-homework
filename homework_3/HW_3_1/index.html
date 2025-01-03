@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork</title>
+    <style>
+        html {
+            font-size: 18px;
+            line-height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>HomeWork 3</h1>
+    <h2>HomeWork 3.1</h2>
+    <h3>Primitive values:</h3>
+    <ol>
+        <li>
+            typeof 5 <strong>is number</strong>
+        </li>
+        <li>
+            typeof '5' <strong>is string </strong>
+        </li>
+        <li>
+            typeof false <strong>is boolean</strong>
+        </li>
+        <li>
+            typeof null <strong>is object</strong>
+        </li>
+        <li>
+            typeof 456654509891234450997676543n <strong>is bigint</strong>
+        </li>
+        <li>
+            typeof varUndefined <strong>is undefined</strong>
+        </li>
+        <li>
+            typeof Symbol('') <strong>is symbol</strong>
+        </li>
+     </ol>   
+     <h3>Objects:</h3>
+     <ol>
+        <li>
+            const user = {
+                id: 1,
+                name: "Daniil",
+                age: 20,
+            }; <strong>is object</strong>
+         </li>
+        <li>
+            const array = ['number', 'string', 'boolean', 'object', 'bigint', 'undefined', 'symbol']; <strong>is object</strong>
+        </li>
+        <li>
+            function sum() {
+              return 'Hello';
+            }; <strong>is function</strong>
+        </li>
+     </ol>
+           
+    <script>
+        //Primitive values
+        console.log(typeof 5);//number
+        console.log(typeof '5');//string
+        console.log(typeof false);//boolean
+        console.log(typeof null);//object
+        console.log(typeof 456654509891234450997676543n);//bigint
+        console.log(typeof varUndefined);//undefined
+        console.log(typeof Symbol(''));//symbol
+        //object
+        const user = {
+            id: 1,
+            name: "Daniil",
+            age: 20,
+        };
+        console.log(typeof user);//object
+        const array = ['number', 'string', 'boolean', 'object', 'bigint', 'undefined', 'symbol'];
+        console.log(typeof array);//object
+        function sum() {
+            return 'Hello';
+        }
+        console.log(typeof sum);//function
+    </script>
+</body>
+</html>
