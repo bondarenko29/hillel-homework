@@ -7,6 +7,6 @@
      }
     else {
         num = num.split('').join(' '); 
-        document.getElementById("demo").innerHTML = num;        
+        document.getElementById("demo").innerText = num;        
     }                           
 }  
