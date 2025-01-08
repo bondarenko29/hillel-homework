@@ -1,0 +1,26 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5em; 
+    margin: 20px; 
+
+}
+.btn {
+    padding: 10px 45px;
+    font-size: 18px;
+    color: #f0f8ff;
+    background-color: #d0364d;
+    border-color: #ec6292;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.btn:hover {
+    background-color: #ec6292;
+}
+p {
+    font-size: 20px; 
+}
