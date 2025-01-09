@@ -1,9 +1,17 @@
 function myFunction() {
     const userName = prompt("Введіть ваше ім'я: ");
-    let messageUserName = `Вас звати ${userName}`;
+    let messageUserName;
+    if (userName === null || userName.trim() === '') {
+        messageUserName = "Шкода, що Ви не захотіли ввести своє ім'я 😥";
+    } 
+    else {
+        messageUserName = `Вас звати ${userName}`;
+    }
+    
     const yearOfbirth = prompt('Введіть ваш рік народження: ');
-if (yearOfbirth === null) {
-    let messageAge = 'Шкода, що Ви не захотіли ввести свою дату народження 😥';
+    let messageAge;
+if (yearOfbirth === null || yearOfbirth === '') {
+    messageAge = 'Шкода, що Ви не захотіли ввести свою дату народження 😥';
 }
 else {
     let today = new Date(); 
@@ -14,7 +22,7 @@ const userCity = prompt('Введіть назву міста де ви прож
 let userSport = prompt('Ваш улюблений вид спорту?');
 
 let messageCity;
-if (userCity === null){
+if (userCity === null || userCity === ''){
     messageCity = 'Шкода, що Ви не захотіли ввести своє місто 😥';
 }
 else {
@@ -33,7 +41,7 @@ else {
 const bestPlayer = ['Олександр Усик', 'Вінісіус Жуніор', 'Новак Джокович'];
 
 let messageSport;
-if (userSport === null) {
+if (userSport === null || userSport.trim() === '') {
     messageSport = 'Шкода, що Ви не захотіли ввести свій улюблений вид спорту 😥';
 }
 else {
