@@ -1,0 +1,38 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5em; 
+    padding: 0;
+    margin: 0;
+
+}
+.main{
+    background-color:#afdad7;
+    display: block;
+    width: 500px; 
+    padding: 30px 100px;
+    margin: 0 auto;
+    text-align: center;
+} 
+.btn {
+    padding: 10px 45px;
+    font-size: 18px;
+    color: #f0f8ff;
+    background-color: #138480;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #035451;
+    box-shadow: rgba(5, 86, 85, 0.458) 0 4px 12px;
+}
+p {
+    font-size: 20px; 
+}
