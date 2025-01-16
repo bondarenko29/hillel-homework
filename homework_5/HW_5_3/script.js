@@ -1,6 +1,5 @@
 function myFunction() {
     let intNumber = prompt('Введіть ціле число: ');
-
     let message;
     let fragment = new DocumentFragment();
     if (intNumber === null || intNumber.trim() === '' || isNaN(intNumber) || intNumber == 0) {
@@ -11,11 +10,10 @@ function myFunction() {
     else if (!Number.isInteger(parseFloat(intNumber))) {
         message = confirm("Ви не ввели ціле число!");
         intNumber = document.getElementById("converter").innerText = "";
-    }
+    } 
     else {
         let i = 1;
-        let el;
-       
+        let el;      
         do {
             el = document.createElement("li"); 
             let pow = `Якщо ${i}, то ${i}^2 = ${Math.pow(i, 2)}`
@@ -24,9 +22,7 @@ function myFunction() {
             console.log(i);
             i++;
         }
-        while (Math.pow(i, 2) <= intNumber)                          
+        while (Math.pow(i, 2) <= intNumber)
        }
-       return fragment;     
+       return fragment;
 }
-
-
