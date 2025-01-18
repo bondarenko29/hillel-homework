@@ -5,11 +5,11 @@ function myFunction(){
     let newSentence = '';
     if (mySentence === null || mySentence.trim() === '') {
       message = confirm("Ви не ввели речення!");
-      document.getElementById("converter").innerText = "";
+      document.getElementById("sentence").innerText = "";
     } 
     if (myChar === null || myChar.trim() === '') {
       message = confirm("Ви не ввели символи! Натисніть ще раз на кнопку!");
-      document.getElementById("converter").innerText = "";   
+      document.getElementById("sentence").innerText = "";   
     }   
     if(mySentence, myChar) {
         const removeChar = function() {      
