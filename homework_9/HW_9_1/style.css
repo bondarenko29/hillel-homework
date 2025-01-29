@@ -1,0 +1,33 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5em; 
+    padding: 0;
+    margin: 0;
+}
+.main{
+    background-color:#dbf6ea;
+    border-radius: 15px;
+    border: 2px solid #e5f9f1;
+    box-shadow: rgba(25, 59, 44, 0.6) 0 18px 20px;;
+    display: block;
+    width: 500px;
+    padding: 30px 100px;
+    margin: 20px auto;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+} 
+p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #055353;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
