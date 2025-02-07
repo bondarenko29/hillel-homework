@@ -4,7 +4,6 @@ body {
     font-weight: normal;
     line-height: 1.5em; 
     padding: 0;
-    position:relative;
 }
 .main{
     background-color:#dbf6ea;
@@ -24,16 +23,13 @@ body {
 } 
 
 p {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-size: 22px;
     font-weight: bold;
     color: #db2f08;
 
 }
 #myButton {
-    position:absolute;
-    margin: 0 auto;
-    
     padding: 10px 45px;
     font-size: 18px;
     color: #f0f8ff;
