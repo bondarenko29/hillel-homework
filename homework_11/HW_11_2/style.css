@@ -1,0 +1,53 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5em; 
+    padding: 0;
+    position:relative;
+}
+.main{
+    background-color:#dbf6ea;
+    border-radius: 15px;
+    border: 2px solid #e5f9f1;
+    box-shadow: rgba(25, 59, 44, 0.6) 0 18px 20px;;
+    display: block;
+    width: 500px;
+    height: 300px;
+    padding: 30px 100px;
+    margin: 20px auto;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+} 
+
+p {
+    margin-bottom: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #db2f08;
+
+}
+#myButton {
+    position:absolute;
+    margin: 0 auto;
+    
+    padding: 10px 45px;
+    font-size: 18px;
+    color: #f0f8ff;
+    background-color: #138480;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+#myButton:hover,
+#myButton:focus {
+    background-color: #035451;
+    box-shadow: rgba(5, 86, 85, 0.458) 0 4px 12px;
+}
