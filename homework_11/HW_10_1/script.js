@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-        function createTable(rows, cols) {
+        const createTable = (rows, cols) => {
         const table = document.createElement('table');
         let caption = document.createElement('caption');
         caption.textContent = 'Pythagorean Square';
