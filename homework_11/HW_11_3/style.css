@@ -1,0 +1,49 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5em; 
+    padding: 0;
+}
+.main {
+    background-color:#f7f8cb;
+    border-radius: 15px;
+    border: 2px solid #f7f8cb;
+    box-shadow: rgb(210, 211, 152) 0 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    padding: 40px 0;
+    margin: 20px auto;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  
+}
+#myButton {
+    padding: 10px 45px;
+    font-size: 18px;
+    color: #f0f8ff;
+    background-color: #138480;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+#myButton:hover,
+#myButton:focus {
+    background-color: #035451;
+    box-shadow: rgba(5, 86, 85, 0.458) 0 4px 12px;
+}
+
+#changeImage {
+    width: 450px;
+    height: 300px;
+}
