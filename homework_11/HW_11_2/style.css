@@ -29,6 +29,9 @@ p {
     color: #db2f08;
 
 }
+.changed-text-color {
+    color: #087cdb;
+}
 #myButton {
     padding: 10px 45px;
     font-size: 18px;
