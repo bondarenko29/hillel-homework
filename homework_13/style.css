@@ -1,0 +1,101 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5em; 
+    padding: 0;
+    background-color: #111010;
+}
+#main{
+    background-color: rgba(15, 15, 15, 0.959);
+    margin: 120px 0;
+    -webkit-box-shadow: 0px 4px 10px 2px rgba(89, 242, 120, 0.5);
+    box-shadow: 0px 4px 10px 2px rgba(89, 242, 120, 0.5);
+    border-radius: 10px;
+    display: block;
+    width: 600px;
+    height: 700px;
+    color: #bbb;
+    padding: 30px 100px;
+    margin: 20px auto;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -webkit-border-radius: 15px;
+} 
+
+.title-main {
+    color: #59f27880;
+   
+}
+#my-form {
+    display: block;
+    width: 400px;
+    font-size: 24px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    color: #bbb;
+    font-size: 16px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    background: 0 0;
+    text-align: left;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+.input:hover { 
+    border-width: 1px;
+    border: 1px solid #4bffa5;
+}
+
+.input:valid {
+    color:  #328a5e;  
+}
+
+#errorMessage {
+    margin-bottom: 20px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: -10px; 
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    color: #bbb;
+    margin-bottom: 10px;
+    border: 2px solid #4bffa5;
+    border-radius: 20px;
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.btn:hover {
+    color: #bbb;
+    border: 2px solid #4bffa5;
+    -webkit-box-shadow: 0px 4px 10px 2px rgba(89, 242, 120, 0.5);
+    box-shadow: 0px 4px 10px 2px rgba(89, 242, 120, 0.5);
+}
+.btn:active {
+    color: #3edd8e;
+}
+
