@@ -17,14 +17,13 @@ class Student {
             return;
         }
         this.grades.push(grade);
-        this.present();
     }
     getAverageGrade() {
         if (this.grades.length === 0) {
-            console.log('Ви ще не почали курс!');
+            return 0;
         }
         const averageSum = this.grades.reduce((acc, grade) => acc + grade, 0);
-        return averageSum / this.visiting.length || 0;
+        return averageSum / this.grades.length || 0;
     }
     
     getAverageVisiting() {
@@ -44,7 +43,6 @@ class Student {
         for (let i = 0; i < this. visiting.length; i++) {
             if (this.visiting[i] === null) {
                 this.visiting[i] = false;
-                this.addGrade(null);
                 return;
             }
         }
@@ -99,9 +97,12 @@ console.log(student1.getAverageVisiting());
 console.log(student1.summary()); 
 
 const student2 = new Student("Marija", "Petrova", 1995);
-
+// student2.addGrade(80);
+// student2.addGrade(90);
 console.log(student2.getAge()); 
 console.log(student2.getAverageGrade()); 
+console.log(student2.getAverageVisiting());
+console.log(student2.summary());
 
 const student3 = new Student("Alex", "Bond", 2017, [70, 85, 90]);
 
