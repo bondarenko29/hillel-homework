@@ -28,9 +28,16 @@ class Calculator {
         return Math.sqrt(a);
     }
 
-    power(a, b) {
-        return Math.pow(a, b);
-    }
+     power(a, b) {
+        if (b === 0) return 1;
+        if (b < 0) return 1 / power(a, -b);
+      
+        let result = 1;
+        for (let i = 0; i < b; i++) {
+          result *= a;
+        }
+        return result;
+      }    
 }
 
 const calc = new Calculator();
@@ -55,7 +62,8 @@ console.log(calc.abc(0)); // 0
 
 console.log(calc.sqrt(16)); // 4
 
-console.log(calc.power(3, -4)); // 81
+console.log(calc.power(5, 4)); // 625
+console.log(calc.power(3, 4)); // 81
 
 
 

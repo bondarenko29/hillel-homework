@@ -14,7 +14,10 @@ function addItem() {
     confirm('Enter an task!');
   }
 }
+
+
 addButton.addEventListener('click', addItem);
+
 
 function createTodoItem(item, checked = false) {
   const todoItem = document.createElement('li');
@@ -27,8 +30,9 @@ function createTodoItem(item, checked = false) {
   const todoItemDescription = document.createElement('span');
   todoItemDescription.classList.add('todo-item__description');
   todoItemDescription.textContent = item;
-
+  addButton.type = 'button';
   const deleteButton = document.createElement('button');
+  deleteButton.type = 'button';
   deleteButton.classList.add('form__btn');
   deleteButton.textContent = 'Видалити';
 
