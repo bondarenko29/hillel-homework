@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>HomeWork_19</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <h1>Wheather Widget</h1>
+        <div class="search-box">
+            <i class="bx bxs-map box-map"></i>
+            <input type="text" placeholder="Enter your location">
+            <button class="bx bx-search"></button>
+        </div>
+        <p class="city-hide">city hide</p>
+        <div class="weather-box">
+            <div class="box">
+                <div class="info-weather">
+                    <div class="weather">
+                        <p><time id="currentTime"></time></p>
+                        <img src="images/cloud.png">
+                        <p class="temperature">0<span>℃</span></p>
+                        <p class="description">Broken Clouds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="box-water"></i>
+                <div class="text">
+                    <div class="info-humidity">
+                        <span>0%</span>
+                    </div>
+                    <p>Humidity</p>
+                </div>
+            </div>
+
+            <div class="pressure">
+                <i class="box-pressure"></i>
+                <div class="text">
+                    <div class="info-pressure">
+                        <span>0 hPa</span>
+                    </div>
+                    <p>Pressure</p>
+                </div>
+            </div>
+
+            <div class="wind">
+                <i class="box-wind"></i>
+                <div class="text">
+                    <div class="info-wind">
+                        <span>0 Km/h</span>
+                    </div>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="not-found">
+            <div class="box">
+                <img src="images/error-404.png">
+                <p>Oops! Location not found!</p>
+            </div>
+        </div>       
+    </div> 
+     
+    <script>
+        const container = document.querySelector('.container');
+        const search = document.querySelector('.search-box button');
+        const weatherBox = document.querySelector('.weather-box');
+        const weatherDetails = document.querySelector('.weather-details');
+        const error404 = document.querySelector('.not-found');
+        const cityHide = document.querySelector('.city-hide');
+        
+        function displayCurrentTime() {
+            const currentTimeElement = document.getElementById('currentTime');
+            const now = new Date();
+
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            }
+            const formattedTime = now.toLocaleDateString('en-US', options);
+            currentTimeElement.textContent = formattedTime;
+        }
+        displayCurrentTime();
+        setInterval(displayCurrentTime, 1000);
+
+        search.addEventListener('click', () => {
+            const apiKey = 'e468051936d3725ad351c67497e0198c'; 
+            const city = document.querySelector('.search-box input').value;
+
+            if (city === '')
+                return;
+            
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
+            .then(response => response.json())
+            .then(json => {
+                
+                if (json.cod === '404') {
+                    cityHide.textContent = city;
+                    container.style.height = '700px';
+                    weatherBox.classList.remove('active');
+                    weatherDetails.classList.remove('active');
+                    error404.classList.add('active');
+                    return;
+                }
+                
+                const image = document.querySelector('.weather-box img');
+                const temperature = document.querySelector('.weather-box .temperature');
+                const description = document.querySelector('.weather-box .description');
+                const humidity = document.querySelector('.weather-details .humidity span');
+                const pressure = document.querySelector('.weather-details .pressure span');
+                const wind = document.querySelector('.weather-details .wind span');
+
+                if (cityHide.textContent === city) {
+                    return;
+                } else {
+                    cityHide.textContent = city;
+                    container.style.height = '700px';
+                    container.classList.add('active');
+                    weatherBox.classList.add('active');
+                    weatherDetails.classList.add('active');
+                    error404.classList.remove('active');
+
+                    switch (json.weather[0].main) {
+                    case 'Clear':
+                        image.src = 'images/clear.png';
+                        break;
+                    case 'Rain':
+                        image.src = 'images/rain_1.png';
+                        break;
+                    case 'Snow':
+                        image.src = 'images/snow.png';
+                        break;
+                    case 'Clouds':
+                        image.src = 'images/cloud.png';
+                        break;
+                    case 'Mist':
+                        image.src = 'images/mist.png';
+                        break;
+                    default:
+                        image.src = 'images/cloud.png';          
+                }
+                    temperature.innerHTML = `${parseInt(json.main.temp)}<span>℃</span>`;
+                    description.textContent = `${json.weather[0].description}`;
+                    humidity.textContent = `${json.main.humidity}%`;
+                    pressure.textContent = `${json.main.pressure} hPa`;
+                    wind.textContent = `${parseInt(json.wind.speed)} Km/h`;
+                }
+                
+            })
+            .catch(error => console.error('Fetching weather data failed:', error));
+        });
+
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        body {
+            font-family: "Roboto", sans-serif;
+            margin-top: 70px;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.5em; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #111010;
+            color: #fff;
+        }
+        .container { 
+            position: relative;
+            box-shadow: 0px 4px 10px 2px rgba(7, 139, 233, 0.5);
+            border-radius: 16px;
+            display: block;
+            width: 650px;
+            height: 210px;
+            color: rgb(224, 242, 243);
+            text-align: center;
+            padding: 50px;
+            transition: height .6s ease;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+        } 
+        h1 {
+            margin-bottom: 40px;
+            color: #90d5f8;
+        }
+        .search-box {
+            position: relative;
+            justify-content: center;
+            width: 100%;
+            height: 55px;
+            border-radius: 10px;
+            background: #90d5f8;
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 10px;
+            outline: none;
+            font-size: 22px;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 0 48px 0 42px;
+        }
+        .search-box input::placeholder {
+            color: #fff;
+            text-transform: capitalize;
+        }
+        .search-box button {
+            position: absolute;
+            right: 0;
+            width: 40px;
+            height: 100%;
+            background: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            font-size: 28px;
+            padding: 0 40px 0 5px;
+            cursor: pointer;
+        }
+        .search-box i {
+            position: absolute;
+            left: 5px;
+            width: 40px;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 28px;
+            padding: 15px 40px 0 5px;
+        }
+        .weather p{
+            margin-bottom: 30px;
+        }
+        #currentTime {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+        .weather-box {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .weather-box,
+        .weather-details,
+        .not-found {
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .weather-box.active,
+        .weather-details.active,
+        .not-found.active {
+            visibility: visible;
+        }
+        .weather-box .box,
+        .not-found .box {
+            transform: translateY(-100%);
+        }
+        .weather-box.active .box,
+        .not-found.active .box {
+            transform: translateY(0%);
+            transition: transform 1s ease;
+            transition-delay: .6s;
+        }
+        .weather-box .box .info-weather {
+            transform: translateY(-120%);
+        }
+        .container.active .weather-box .box .info-weather,
+        .container.active .weather-details .humidity .info-humidity,
+        .container.active .weather-details .pressure .info-pressure,
+        .container.active .weather-details .wind .info-wind {
+            transform: translateY(0%);
+            transition: transform 1s ease;
+        }
+        .weather-box img {
+            width: 30%;
+        }
+        .weather-box .temperature {
+            position: relative;
+            font-size: 55px;
+            line-height: 1;
+            margin: 20px 0 6px -30px;
+        }
+        .weather-box .temperature span {
+            position: absolute;
+            font-size: 24px;
+            margin-left: 4px;
+        }
+        .weather-box .description {
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+        .weather-details {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            padding: 0 20px;
+            display: flex;
+        }
+        .weather-details .humidity,
+        .weather-details .pressure,
+        .weather-details .wind {
+            display: flex;
+            align-items: center;
+            width: 33.33%;
+            transform: translateY(-100%);
+        }
+
+        .weather-details.active .humidity,
+        .weather-details.active .pressure,
+        .weather-details.active .wind {
+            transform: translateY(0%);
+            transition: transform 1s ease;
+            transition-delay: 1.2s;
+        }
+        .weather-details .humidity .info-humidity,
+        .weather-details .pressure .info-pressure,
+        .weather-details .wind .info-wind {
+            transform: translateY(-100%);
+            overflow: hidden;
+        }
+
+        .weather-details .humidity {
+            padding-left: 20px;
+            justify-content: flex-start;
+        }
+        .weather-details .wind {
+            padding-right: 20px;
+            justify-content: flex-end;
+        }
+        .weather-details .pressure {
+            justify-content: center;
+        }
+
+        .weather-details i {
+            font-size: 56px;
+            margin-right: 10px;
+        }
+        .weather-details span {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .weather-details p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .not-found {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 250px;
+        }
+
+        .not-found img {
+            width: 40%;
+        }
+        .not-found p {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .city-hide {
+            display: none;
+        }
+        .box-water {
+            width: 40px;
+            height: 100%;
+            background-image: url(images/water-24.png);
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+            font-size: 28px;
+        }
+        .box-pressure {
+            width: 40px;
+            height: 100%;
+            background-image: url(images/pressure-24.png);
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+            font-size: 28px;
+        }
+        .box-wind {
+            width: 40px;
+            height: 100%;
+            background-image: url(images/wind-24.png);
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+            font-size: 28px;
+        }
+    </style>
+</body>
+</html>
