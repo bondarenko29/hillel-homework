@@ -34,8 +34,11 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.delete-btn', function () {
-      $(this).parent().remove();
-  });
+    let taskText = $(this).siblings(".todo-item__description").text();
+    $(this).parent().remove();
+    removeTodoItem(taskText);
+    saveTodoItems();
+});
 
   function saveTodoItems() {
       let tasks = [];
@@ -43,6 +46,12 @@ $(document).ready(function () {
           tasks.push($(this).text());
       });
       localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  function removeTodoItem(taskText) {
+    let savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    savedTasks = savedTasks.filter(task => task !== taskText);
+    localStorage.setItem('tasks', JSON.stringify(savedTasks));
   }
 
   function loadTodoItems() {
