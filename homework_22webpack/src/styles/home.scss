@@ -1,0 +1,115 @@
+$primary-color: #06efe3;
+$secondary-color: #3fe6dd;
+$hover-color: #1db1a9;
+$border-color: #06817a;
+$text-color: #065a5c;
+$danger-color: #d82424;
+$danger-hover: #a71212;
+$modal-bg: #8ff0eb;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.2;
+    background-image: url("../images/see.jpg");
+}
+
+.container {
+    width: 800px !important;
+    padding: 20px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+}
+
+h1 {
+    color: $text-color;
+}
+
+.form {
+    background: #fff;
+    padding: 10px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+
+    &__input {
+        min-height: 25px;
+        margin-right: 10px;
+        padding: 10px;
+        font-size: 20px;
+        width: 100%;
+        border: 1.3px solid;
+        border-radius: 3px;
+
+        .form-control {
+            font-size: 1.2rem;
+        }
+    }
+
+    .form-control:focus {
+        border-color: $primary-color;
+        box-shadow: none;
+    }
+
+    &__btn {
+        background: $secondary-color;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 6px;
+
+        &:hover {
+            background: $hover-color;
+        }
+    }
+}
+
+.todo-list {
+    padding-left: 0;
+}
+
+.todo-item {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &__description {
+        flex-grow: 1;
+        padding-left: 10px;
+    }
+}
+
+.list-group-item {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.mt-4 {
+    margin-top: 0;
+}
+
+.modal-content {
+    background-color: $modal-bg;
+    font-size: 18px;
+}
+
+.btn-danger {
+    font-size: 18px;
+    background-color: $danger-color;
+    border: none;
+
+    &:hover {
+        background-color: $danger-hover;
+    }
+}
