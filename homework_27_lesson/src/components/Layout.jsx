@@ -1,5 +1,4 @@
 import { NavLink, Outlet, useMatches } from "react-router-dom";
-import { ThemeProvider } from "../context/ThemeContext";
 import { useTheme } from "../context/ThemeContext"
 import { useEffect } from "react";
 

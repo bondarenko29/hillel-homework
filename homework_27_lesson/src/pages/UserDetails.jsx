@@ -3,9 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import { useTheme } from '../context/ThemeContext'; 
 
 const UserDetails = () => {
-    const { theme } = useTheme(); // Отримуємо значення теми з контексту
+    const { theme } = useTheme(); 
 
-    // Визначаємо класи Tailwind CSS на основі поточної теми
+
     const bgColorClass = theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100';
     const textColorClass = theme === 'dark' ? 'text-gray-100' : 'text-gray-800';
 
