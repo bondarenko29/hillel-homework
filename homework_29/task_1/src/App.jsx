@@ -3,7 +3,8 @@ import { Provider } from 'react-redux';
 import { router } from './router';
 import ErrorBoundary from './components/ErrorBoundary';
 import {  ThemeProvider} from "./context/ThemeContext";
-import store  from './store/store';
+import { store, persistor }  from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
 const MainApp = () => {
@@ -13,11 +14,13 @@ const MainApp = () => {
 const App = () => {
   return (
     <Provider store={store}>  
-        <ThemeProvider>
-          <ErrorBoundary>
-            <MainApp />   
-          </ErrorBoundary>
-        </ThemeProvider> 
+        <PersistGate persistor={persistor}>
+          <ThemeProvider>
+            <ErrorBoundary>
+              <MainApp />   
+            </ErrorBoundary>
+          </ThemeProvider> 
+        </PersistGate>
     </Provider>
   )
 }

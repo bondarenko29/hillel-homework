@@ -8,6 +8,7 @@ const navLinks = [
     { to: "/about", label: "About" },
     { to: "/contacts", label: "Contacts" },
     { to: "/counter", label: "Counter"},
+    { to: "/todo", label: "Todo"},
 ]
 
 const Header = () => {
