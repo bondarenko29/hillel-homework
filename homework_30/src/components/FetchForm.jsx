@@ -4,7 +4,7 @@ import { fetchPeople } from '../store/features/peopleSlice';
 
 function FetchForm() {
   const dispatch = useDispatch();
-  const [id, setId] = useState('1');
+  const [id] = useState('1');
   const [url, setUrl] = useState(`https://www.swapi.tech/api/people/${id}`);
 
   const handleInputChange = (e) => {
@@ -24,7 +24,7 @@ function FetchForm() {
         onChange={handleInputChange}
         className="flex-1 text-black pl-4 bg-gray-200 h-12 border border-gray-800 rounded-lg"
         type="text"
-        placeholder="https://www.swapi.tech/api/"
+        placeholder="https://www.swapi.tech/api/people/"
       />
       <button
         onClick={handleSubmit}
