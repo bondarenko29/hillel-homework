@@ -1,0 +1,94 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "title": "Hotel California",
+      "location": "Los Angeles",
+      "price": 120,
+      "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "You can check out anytime you like, but you can never leave.",
+      "booked": true
+    },
+    {
+      "id": "2",
+      "title": "Grand Budapest Hotel",
+      "location": "Zubrowka",
+      "price": 180,
+      "image": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=3874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "A charming and nostalgic escape with pink walls and vintage service.",
+      "booked": true
+    },
+    {
+      "id": "3",
+      "title": "The Overlook Hotel",
+      "location": "Colorado",
+      "price": 90,
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "A quiet retreat... until winter.",
+      "booked": false
+    },
+    {
+      "id": "4",
+      "title": "Bates Motel",
+      "location": "Fairvale",
+      "price": 60,
+      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Family-run business with a unique atmosphere.",
+      "booked": false
+    },
+    {
+      "id": "5",
+      "title": "The Continental",
+      "location": "New York",
+      "price": 250,
+      "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=3124&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Luxury for a very exclusive clientele.",
+      "booked": false
+    },
+    {
+      "id": "6",
+      "title": "Fawlty Towers",
+      "location": "Torquay",
+      "price": 70,
+      "image": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=3864&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "British hospitality at its most unpredictable.",
+      "booked": false
+    },
+    {
+      "id": "7",
+      "title": "The Great Northern Hotel",
+      "location": "Twin Peaks",
+      "price": 95,
+      "image": "https://images.unsplash.com/photo-1498503182468-3b51cbb6cb24?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Close to nature. And strange dreams.",
+      "booked": false
+    },
+    {
+      "id": "8",
+      "title": "Caesar's Palace",
+      "location": "Las Vegas",
+      "price": 200,
+      "image": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Live like an emperor, gamble like a king.",
+      "booked": false
+    },
+    {
+      "id": "9",
+      "title": "The Bellagio",
+      "location": "Las Vegas",
+      "price": 220,
+      "image": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Fountains, elegance, and endless fun.",
+      "booked": false
+    },
+    {
+      "id": "10",
+      "title": "The Ritz",
+      "location": "London",
+      "price": 300,
+      "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=3750&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Timeless luxury and classic charm.",
+      "booked": false
+    }
+  ]
+}
